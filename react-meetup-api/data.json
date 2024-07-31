@@ -1,0 +1,50 @@
+[
+  {
+    "id": "m1",
+    "title": "This is a first meetup",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
+    "address": "Meetupstreet 5, 12345 Meetup City",
+    "description": "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!",
+    "favourite": false
+  },
+  {
+    "id": "m2",
+    "title": "This is a second meetup",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
+    "address": "Meetupstreet 5, 12345 Meetup City",
+    "description": "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!",
+    "favourite": false
+  },
+  {
+    "id": "m3",
+    "title": "This is a third meetup",
+    "image": "https://www.deutschakademie.de/muenchen/blog/wp-content/uploads/2021/03/Mu%CC%88nchen-Alemania.jpg",
+    "address": "Meetupstreet 5, 12345 Meetup City",
+    "description": "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!",
+    "favourite": false
+  },
+  {
+    "id": "m4",
+    "title": "Hogwarts",
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/e/e1/Hogwarts_Castle_DHF2.jpg",
+    "address": "Hogwarts Castle, Highlands, Scotland, Great Britai",
+    "description": "Hogwarts School of Witchcraft and Wizardry, often shortened to Hogwarts, was the British wizarding school located in the Scottish Highlands. Any magical children residing in the islands of Great Britain and Ireland who had reached the age of eleven years old by the start of the incoming term were accepted as students. It was a state-owned school, funded by the British Ministry of Magic.",
+    "favourite": true
+  },
+  {
+    "id": "m5",
+    "title": "Callejón Diagon",
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/3/3a/Diagon_alley_1998.jpg",
+    "address": "Charing Cross Road, Londres, Inglaterra, Gran Bretaña",
+    "description": "El callejón Diagon es un callejón mágico empedrado y una zona comercial ubicada en Londres, Inglaterra detrás de un pub llamado el Caldero Chorreante. Dentro del callejón hay una variedad de restaurantes, tiendas y otros lugares de interés. Todos los artículos en la lista de suministros del Colegio Hogwarts de Magia y Hechicería se pueden comprar en el callejón Diagon. El callejón está completamente oculto del mundo muggle que está justo fuera de sus límites. Es muy grande en área y esencialmente es el centro de la magia de Londres.",
+    "favourite": true
+  },
+  {
+    "id": "m6",
+    "title": "Portkey",
+    "image": "https://static.wikia.nocookie.net/harrypotter/images/3/3a/Diagon_alley_1998.jpg",
+    "address": "Various",
+    "description": "A Portkey was a magical object enchanted to instantly bring anyone touching it to a specific location. In most cases, a Portkey was an everyday object that would not draw the attention of a Muggle. Travelling by Portkey was said to feel like having a hook \\\"somewhere behind the navel\\\" pulling the traveller to their location.",
+    "favourite": true
+  }
+]

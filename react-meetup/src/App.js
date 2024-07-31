@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import AllMeetupsPage from "./pages/AllMeetupsPage";
 import FavoritesPage from "./pages/Favorites";
@@ -7,30 +7,27 @@ import { ALL_MEETUP_PAGE, FAVORITES_PAGE, NEW_MEETUP_PAGE } from "./utils/consta
 
 import MainNavigation from "./components/layout/MainNavigation";
 import Layout from "./components/layout/Layout";
+import { useFetch } from "./util-hooks/useFetch";
+import { Outlet } from "react-router-dom";
 
 function App() {
-  const [page, setPage] = useState(ALL_MEETUP_PAGE);
+  const [favouritesMeetups, setFavouritesMeetups] = useState([]);
+  const { data, getMeetups, createMeetup, updateMeetup } = useFetch({
+    url: "/meetups"
+  });
 
-  function getCurrentPageComponent() {
-    let currentPageComponent = <AllMeetupsPage />;
-    switch (page) {
-      case FAVORITES_PAGE:
-        currentPageComponent = <FavoritesPage />;
-        break;
-      case NEW_MEETUP_PAGE:
-        currentPageComponent = <NewMeetupsPage />;
-        break;
-      default:
-        currentPageComponent = <AllMeetupsPage />;
-    }
-
-    return currentPageComponent;
-  }
+  // When data changes, save favourites meetups into state
+  useEffect(() => {
+    if (data)
+      setFavouritesMeetups(data.filter(d => d.favourite));
+  }, [data]);
 
   return (
-    <div data-test="app">
-      <MainNavigation setPage={setPage} />
-      <Layout>{getCurrentPageComponent()}</Layout>
+    <div data-testid="app">
+      <MainNavigation favouritesMeetups={favouritesMeetups.length} />
+      <Layout>
+        <Outlet context={{ data, getMeetups, createMeetup, updateMeetup, favouritesMeetups }} />
+      </Layout>
     </div>
   );
 }

@@ -1,32 +1,59 @@
-import { ALL_MEETUP_PAGE, FAVORITES_PAGE, NEW_MEETUP_PAGE } from "./../../utils/constants";
-
+import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 import classes from "./MainNavigation.module.css";
 
-export default function MainNavigation({ setPage }) {
+export default function MainNavigation({ favouritesMeetups }) {
+  // States for animation
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // When user scroll vertically, modify states
+  useEffect(() => {
+    /**
+     * Function that shows the header or not based on wheter the user
+     * scroll down or up.
+     */
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
-    <header className={classes.header} data-test="navigation-header">
+    <motion.header
+      className={classes.header}
+      initial={{ opacity: 1, y: 0 }}
+      animate={{ opacity: showHeader ? 1 : 0, y: showHeader ? 0 : -100 }}
+      transition={{ duration: 0.3 }}
+      data-testid="navigation-header"
+    >
       <div className={classes.logo}>React Meetups</div>
       <nav>
         <ul>
           <li>
-            <a href="#" onClick={() => setPage(ALL_MEETUP_PAGE)}>
-              All Meetups
-            </a>
-          </li>
-
-          <li>
-            <a href="#" onClick={() => setPage(NEW_MEETUP_PAGE)}>
-              Add New Meetup
-            </a>
+            <NavLink to={"/meetups"} className={({ isActive }) => [isActive ? classes.activeNav : ""]} >All Meetup</NavLink>
           </li>
           <li>
-            <a href="#" onClick={() => setPage(FAVORITES_PAGE)}>
-              My Favorites
-              <span className={classes.badge}>{0}</span>
-            </a>
+            <NavLink to={"/create"} className={({ isActive }) => [isActive ? classes.activeNav : ""]} >Add New Meetup</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/favourites"} className={({ isActive }) => [isActive ? classes.activeNav : ""]}>
+              My Favourites <span className={classes.badge}>{favouritesMeetups}</span>
+            </NavLink>
           </li>
         </ul>
       </nav>
-    </header>
+    </motion.header>
   );
 }
