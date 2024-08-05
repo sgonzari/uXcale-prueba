@@ -21,11 +21,12 @@ Debido a los problemas detectados frente al pseudocódigo proporcionado, adjunto
 - Para el problema del acoplamiento, extensiones y responsabilidad única, desacoplaremos los servicios específicos en el código con su correspondiente cálculo y realizaremos dicho cálculo en su respectiva clase de servicio.
 
 
-# Breve guía
+# Ejercicio 2
+## Breve guía
 En este repositorio, se encuentran 2 proyectos en conjunto el cual uno es necesario del otro, por una parte tenemos el Front y por otra parte tenemos la API para que este Front pueda funcionar.
 
-## react-meetup
+### react-meetup
 Este es el proyecto Front que se pide en la prueba técnica a resolver.
 
-## react-meetup-api
+### react-meetup-api
 Como su propio nombre indica, este es el proyecto API para que Front pueda consumir de ella.
