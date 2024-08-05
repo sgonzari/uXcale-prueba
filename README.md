@@ -17,7 +17,7 @@ Los problemas detectados frente al pseudocódigo proporcionado son:
 ## Propuestas de mejoras
 Debido a los problemas detectados frente al pseudocódigo proporcionado, adjunto posibles propuestas para mejorar estos errores:
 - Para la comprobación de premium, será una opción dentro de la misma clase que indique si el contenido es premium o no.
-- Hacer la correspondiente validación con `instanaceof` que nos sirve para verificar si el objeto recibido es una estancia de la clase correspondiente.
+- Hacer la correspondiente validación con `instanceof` que nos sirve para verificar si el objeto recibido es una estancia de la clase correspondiente.
 - Para el problema del acoplamiento, extensiones y responsabilidad única, desacoplaremos los servicios específicos en el código con su correspondiente cálculo y realizaremos dicho cálculo en su respectiva clase de servicio.
 
 
